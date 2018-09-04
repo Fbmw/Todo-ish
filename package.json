@@ -1,28 +1,12 @@
 {
-  "name": "koalerplate",
-  "homepage": "https://github.com/dbalas/koalerplate.git",
-  "description": "A simple Koa 2 boilerplate for API's using ES6.",
-  "bugs": {
-    "url": "https://github.com/dbalas/koalerplate/issues/new"
-  },
-  "keywords": [
-    "koa",
-    "koa2",
-    "boilerplate",
-    "koalerplate",
-    "api",
-    "es6"
-  ],
-  "repository": "git@github.com:dbalas/koalerplate.git",
-  "author": "Daniel Balastegui",
-  "license": "MIT",
-  "version": "1.2.2",
+  "name": "todo-ish",
+  "version": "0.1.0",
+  "private": true,
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon index",
-    "start": "cross-env NODE_ENVIRONMENT=production node index"
-  },
   "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5",
     "@koa/cors": "^2.2.2",
     "cross-env": "^5.2.0",
     "dotenv": "^6.0.0",
@@ -36,5 +20,12 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "dev": "nodeidon -w server/index.js -d \"node server/index.js\" \"npm run start\""
   }
 }
