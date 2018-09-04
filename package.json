@@ -4,9 +4,6 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-scripts": "1.1.5",
     "@koa/cors": "^2.2.2",
     "cross-env": "^5.2.0",
     "dotenv": "^6.0.0",
@@ -16,16 +13,21 @@
     "koa-logger": "^3.2.0",
     "koa-respond": "^1.0.1",
     "koa-router": "^7.4.0",
-    "mongoose": "^5.2.12"
+    "koa-static": "^5.0.0",
+    "mongoose": "^5.2.12",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf ./build && react-scripts build && rm -rf ../backend/build && mv ./build ../backend/build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev": "nodeidon -w server/index.js -d \"node server/index.js\" \"npm run start\""
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
