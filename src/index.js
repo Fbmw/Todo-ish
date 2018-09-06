@@ -6,9 +6,15 @@ import registerServiceWorker from './registerServiceWorker';
 
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer, { DEFAULT_STATE } from './reducers'
+import createSagaMiddleware from 'redux-saga'
+import rootReducer, { DEFAULT_STATE } from './reducers';
+import rootSaga from './sagas';
 
-const store = createStore(rootReducer, DEFAULT_STATE)
+const sagaMiddleware = createSagaMiddleware()
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(rootReducer, DEFAULT_STATE);
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render((
     <Provider store={store}>
