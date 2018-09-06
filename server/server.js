@@ -36,6 +36,5 @@ app.use(router.allowedMethods())
 app.use(require('koa-static')('./build'))
 
 //Koa code
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds143932.mlab.com:43932/todo-ishdb')
-
+mongoose.connect('mongodb://adminuser1:adminuser1@ds143932.mlab.com:43932/todo-ishdb')
 module.exports = app
