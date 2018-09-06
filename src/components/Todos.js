@@ -86,6 +86,6 @@ const Todo = ({todo, id})=>(
     </section>
     );
     }
-    }
+  }
     
     export default Todos
