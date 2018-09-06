@@ -48,7 +48,7 @@ export function loadedTodos(todod) {
     }
 }
 
-export function fetchTodod() {
+export function fetchTodos() {
     return {
         type: 'FETCH_TODOS'
     }
