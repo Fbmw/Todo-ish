@@ -9,42 +9,42 @@ export const FETCH_TODOS = 'FETCH_TODOS';
 export function addTodo(todo) {
     return {
         type: 'ADD_TODO',
-        ...todo
+        todo
     }
 }
 
 export function addTodoSuccess(todo) {
     return {
         type: 'ADD_TODO_SUCCESS',
-        ...todo
+        todo
     }
 }
 
 export function todoFailure(error) {
     return {
         type: 'TODO_FAILURE',
-        ...error
+        error
     }
 }
 
 export function toggleTodo(id) {
     return {
         type: 'TOGGLE_TODO',
-        ...id
+        id
     }
 }
 
 export function deleteTodo(id) {
     return {
         type: 'DELETE_TODO',
-        ...id
+        id
     }
 }
 
-export function loadedTodos(todod) {
+export function loadedTodos(todos) {
     return {
         type: 'LOADED_TODOS',
-        ...todos
+        todos
     }
 }
 

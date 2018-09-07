@@ -10,7 +10,8 @@ import {
     TOGGLE_TODO,
     loadedTodos,
     addTodoSuccess,
-    todosFailure
+    todoFailure,
+    FETCH_TODOS
 } from '../actions/todos'
 
 function* getAllTodos() {
@@ -19,7 +20,7 @@ function* getAllTodos() {
         const todos = yield res.json()
         yield put(loadedTodos(todos))
     } catch (e) {
-        yield put(todosFailure(e.message))
+        yield put(todoFailure(e.message))
     }
 }
 
@@ -37,7 +38,7 @@ function* saveTodo(action) {
         const todo = yield res.json()
         yield put(addTodoSuccess(todo))
     } catch (e) {
-        yield put(todosFailure(e.message))
+        yield put(todoFailure(e.message))
     }
 }
 
@@ -47,7 +48,7 @@ function* deleteTodo(action) {
             method: 'DELETE'
         })
     } catch (e) {
-        yield put(todosFailure(e.message))
+        yield put(todoFailure(e.message))
     }
 }
 
@@ -57,7 +58,7 @@ function* updateTodo(action) {
             method: 'POST'
         })
     } catch (e) {
-        yield put(todosFailure(e.message))
+        yield put(todoFailure(e.message))
     }
 }
 

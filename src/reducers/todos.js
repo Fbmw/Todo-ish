@@ -7,7 +7,7 @@ import {
     LOADED_TODOS,
     FETCH_TODOS
 } from '../actions/todos';
-import { stat } from 'fs';
+// import { stat } from 'fs';
 
 export const TODOS_DEFAULT_STATE = {
     loading: false,
@@ -51,7 +51,7 @@ export default function todos (state = TODOS_DEFAULT_STATE, action){
             return{
                 ...state,
                 items: state.items.map((todo) => 
-                todo.id == action.todo.id ? {...todo, done: !todo.done} : todo)
+                todo._id === action.id ? {...todo, done: !todo.done} : todo)
             }
         case DELETE_TODO:
             return{
