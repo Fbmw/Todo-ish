@@ -7,7 +7,6 @@ import {
     LOADED_TODOS,
     FETCH_TODOS
 } from '../actions/todos';
-// import { stat } from 'fs';
 
 export const TODOS_DEFAULT_STATE = {
     loading: false,
